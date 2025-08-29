@@ -1,6 +1,8 @@
 package com.sp.ecommercespring.configuration;
 
 import com.sp.ecommercespring.gateway.api.FakeStoreCategoryApi;
+import com.sp.ecommercespring.gateway.api.FakeStoreProductsAPI;
+import com.sp.ecommercespring.gateway.api.FakeStoreSingleProductAPI;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,6 +27,18 @@ public class RetrofitConfig {
     @Bean
     public FakeStoreCategoryApi fakeStoreCategoryApi(Retrofit retrofit) {
         return retrofit.create(FakeStoreCategoryApi.class);
+    }
+
+
+    @Bean
+    public FakeStoreProductsAPI fakeStoreProductsAPI(Retrofit retrofit) {
+        return retrofit.create(FakeStoreProductsAPI.class);
+    }
+
+
+    @Bean
+    public FakeStoreSingleProductAPI  fakeStoreSingleProductAPI(Retrofit retrofit) {
+        return retrofit.create(FakeStoreSingleProductAPI.class);
     }
 
 }

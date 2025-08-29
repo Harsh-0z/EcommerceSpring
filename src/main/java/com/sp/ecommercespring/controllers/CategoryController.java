@@ -17,11 +17,15 @@ public class CategoryController {
 
     public CategoryController(ICategoryService categoryService) {
         this.categoryService = categoryService;
+
     }
 
     @GetMapping
     public List<CategoryDTO> getAllCategories() throws IOException {
         return this.categoryService.getAllCategories();
     }
+
+
+
 
 }
